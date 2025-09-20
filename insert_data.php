@@ -6,7 +6,9 @@ if(isset($_POST['add_students'])){
     $age=$_POST['age'];
 
 
-    if($fname=="" || empty($fname)){
+    if(($fname=="" || empty($fname)) && ($lname=="" || empty($lname)) && ($age=="" || empty($age))){
+        header('location:index.php?message= You need to fill the Categories!');
+    }elseif ($fname=="" || empty($fname)){
         header('location:index.php?message= You need to fill the first name!');
     }
     else if($lname=="" || empty($lname)){
@@ -14,9 +16,6 @@ if(isset($_POST['add_students'])){
     }
     else if($age=="" || empty($age)){
         header('location:index.php?message= You need to fill the age!');
-    }
-    else if($fname=="" || empty($fname) || $lname=="" || empty($lname) || $age=="" || empty($age)){
-        header('location:index.php?message= You need to fill the Categories!');
     }
     else{
         $query = "insert into `students` (`first_name`, `last_name`,`age`) values ('$fname','$lname','$age')";
