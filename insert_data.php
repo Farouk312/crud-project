@@ -1,5 +1,5 @@
 <?php
-include'dbcon.php';
+include ('dbcon.php');
 if(isset($_POST['add_students'])){
     $fname=$_POST['f_name'];
     $lname=$_POST['l_name'];
