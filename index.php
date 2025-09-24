@@ -20,15 +20,13 @@
                 <?php 
                     $query="select * from `students`";
 
-//                     mysqli_query() ترسل الاستعلام إلى قاعدة البيانات عبر الاتصال الموجود في $connection.
-// إذا كان الاستعلام ناجحًا ويُرجع صفوف (مثل SELECT)، فستعود الدالة بكائن نتيجة من نوع mysqli_result.
-// إذا فشل الاستعلام سترجع false.
+
                     $result=mysqli_query($connection,$query);
                     if(!$result){
                         die("query failed: " . mysqli_error($connection));
                     }
                     else{
-                        // mysqli_fetch_assoc($result) تقرأ صفاً واحداً في كل مرة وتعيده كمصفوفة مترابطة (associative array
+      
                         while($row=mysqli_fetch_assoc($result)){
                             ?>
                  <tr>

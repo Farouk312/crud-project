@@ -14,13 +14,7 @@ if(isset($_GET['id'])){
     }
     else{
       $row=mysqli_fetch_assoc($result);
-    //   يستدعي mysqli_fetch_assoc لجلب أول صف من النتيجة كـ مصفوفة ترابطية (associative array).
 
-// المفاتيح هي أسماء الأعمدة في الجدول (مثلاً first_name, last_name, …).
-
-// إذا الاستعلام رجع أكثر من صف، هذا الكود سيأخذ الصف الأول فقط.
-
-// إذا لا يوجد أي صف مطابق (id غير موجود) → mysqli_fetch_assoc سترجع null.
     }
 }
 ?>
@@ -66,7 +60,7 @@ if(isset($_GET['id'])){
                 <label for="age">Age</label>
                 <input type="text" name="age" class="form-control" value="<?php echo $row['age'] ?>">
             </div>
-            <input type="submit" class="btn btn-success" name="update_students" value="UPDATE">
+            <input type="submit" class="btn btn-success mt-2" name="update_students" value="UPDATE" >
         </form>
 
 
